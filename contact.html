@@ -5,16 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+      <div class="validform"></div>
     <main class="container">
       <form id="contactForm">
+
         <div>
-          <label name="name" id="name">Enter you full name</label>
+          <label
+            >Enter you full name
+            <input name="name" id="name" />
+          </label>
+          <div class="form-error" id="nameError">Name is required</div>
         </div>
+
+        <div>
+            <label
+              >Subject
+              <input name="subject" id="subject" />
+            </label>
+            <div class="form-error" id="subjectError">We need more details</div>
+          </div>
+
+        <div>
+          <label>
+            Email is required
+            <input name="email" id="email" />
+          </label>
+          <div class="form-error" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <div>
+            <label
+              >Adress
+              <input name="adress" id="adress" />
+            </label>
+            <div class="form-error" id="adressError">Plese enter complete adress</div>
+          </div>
+          <button>submit</button>
       </form>
     </main>
-    <script src="js/form-validation.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>
 

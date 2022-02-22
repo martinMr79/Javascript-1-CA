@@ -7,5 +7,55 @@ h1 {
 .loader {
     text-align: center;
     font-size: 55px;
+    color: blue;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+
+
+/*****Contact page*****/
+
+.container {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.form-error {
+    display: none;
     color: red;
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+label { 
+    display: block;
+    margin-top: 1rem;
+}
+
+input { 
+    width: 100%;
+    margin-top: 2px;
+    padding: 10px;
+    font-size: 19px;
+}
+
+form { 
+    padding: 2em;
+    background: white;
+    border-radius: 1rem;
+
+}
+
+button { 
+    background-color:blue;
+    border: none;
+    width: 200px;
+    padding: 1rem;  
+    color: antiquewhite;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 0.2rem;
 }
