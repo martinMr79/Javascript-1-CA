@@ -4,28 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Airport finder</title>
+    <title>Movie finder</title>
     <link rel="stylesheet" href="css/style.css">
     
   </head>
+
   <body>
-    <h1>Airline finder tool</h1>
+    <h1>Movie finder</h1>
+    <main class="container">
     <div class="loader">Loading....</div>
 
-    <div class="dropdown">
-      <button onclick="findAirport()" class="dropbtn">Find airline</button>
-    </div>
-    <div>
-    
-      <input type="text " placeholder="Enter Iata Code.." id="myInput">
-
+    <div class="">
+      <input class="movieInput" type="text " placeholder="Enter year">
+      <input class="movieInput" type="text " placeholder="Enter title">
+      <input class="movieInput" type="text " placeholder="Enter genre">
+      <button onclick="getMovie()">Find movie</button>
     </div>
 
-    <div id="airport_By_IATA_Code">
-      <form> </form>
-      </div>
     
-
+    </main>
+    <footer>
+      <a href="contact.html">contact us</a>
+      <p>Copyright&copy; Martin Mroz 2022</p>
+  </footer>
     <script src="js/script.js"></script>
   </body>
+
 </html>

@@ -1,4 +1,4 @@
-const apiUrl = "https://iata-and-icao-codes.p.rapidapi.com/airlines";
+const apiUrl = "https://data-imdb1.p.rapidapi.com/movie/byYear/1983/";
 
 const rapidApiKey = {
   headers: {
@@ -8,12 +8,20 @@ const rapidApiKey = {
 
 let loader = document.querySelector(".loader");
 
-async function getAirData() {
+async function getMovieData() {
   const response = await fetch(apiUrl, rapidApiKey);
   const json = await response.json();
-  console.log(json);
+  console.log(json.results);
+  const getMovie = json.results
+  
+  for(let i = 0; getMovie.length > i; i++) {
+    
+  }
+
 
   loader.innerHTML = "";
+
+
 }
 
-getAirData();
+getMovieData();

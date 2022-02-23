@@ -24,7 +24,7 @@ function validateForm(event) {
     subjectError.style.display = "block";
   }
 
-  if (validateEmail(email.value) === true) {
+  if (validateEmail(email.value) === true && email.value.trim().length > 0) {
     emailError.style.display = "none";
   } else {
     emailError.style.display = "block";
