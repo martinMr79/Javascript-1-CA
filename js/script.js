@@ -7,20 +7,26 @@ const rapidApiKey = {
 };
 
 let loader = document.querySelector(".loader");
+const resultsCard = document.querySelector("#resultsCard")
 
 async function getMovieData() {
   const response = await fetch(apiUrl, rapidApiKey);
   const json = await response.json();
   console.log(json.results);
-  const getMovie = json.results
-  
-  for(let i = 0; getMovie.length > i; i++) {
-    
-  }
-
+  const getMovie = json.results;
 
   loader.innerHTML = "";
+  
 
+  for (let i = 0; i < getMovie.length; i++) {
+    if (i === 20){
+      break; 
+    } 
+    resultsCard.innerHTML += `<div class="result"><a href="details.html">${getMovie[i].title}</a></div>`;
+  }
+
+  
+  
 
 }
 
