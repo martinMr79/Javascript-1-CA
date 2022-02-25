@@ -10,6 +10,8 @@ let loader = document.querySelector(".loader");
 const resultsCard = document.querySelector("#resultsCard")
 
 async function getMovieData() {
+  try { 
+
   const response = await fetch(apiUrl, rapidApiKey);
   const json = await response.json();
   console.log(json.results);
@@ -25,9 +27,18 @@ async function getMovieData() {
     resultsCard.innerHTML += `<div class="result"><a href="details.html?id=${getMovie[i].imdb_id}">${getMovie[i].title}</a></div>`;
   }
 
-  
-  
+}
 
+catch(error) { 
+  console.log(error); 
+  detailContainer.innerHTML = message("error", error); 
+}
+  
 }
 
 getMovieData();
+
+
+function message(messageType = "success", message = "") {
+  return `<div class ="alert ${messageType}">${message}</div>`; 
+}
