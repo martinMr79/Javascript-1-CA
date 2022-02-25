@@ -3,12 +3,12 @@ const detailContainer = document.querySelector(".movie-details")
 const queryString = document.location.search; 
 const params = new URLSearchParams(queryString); 
 
-const id = params.get("imdb_id")
+const id = params.get("imdb_id");
 
 console.log(id)
 
 
-const urlId = "https://data-imdb1.p.rapidapi.com/movie/byYear/1983/" 
+const urlId = "https://data-imdb1.p.rapidapi.com/movie/byYear/1983/" + id
 
 const rapidApiKey = {
     headers: {
@@ -27,7 +27,7 @@ async function getMovieData() {
     console.log(json.results);
     const getMovieDetails = json.results;
         
-        
+    createHTML(getMovieDetails)    
 }
 
 catch(error) { 

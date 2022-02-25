@@ -24,7 +24,7 @@ async function getMovieData() {
     if (i === 20){
       break; 
     } 
-    resultsCard.innerHTML += `<div class="result"><a href="details.html?id=${getMovie[i].imdb_id}">${getMovie[i].title}</a></div>`;
+    resultsCard.innerHTML += `<a href="details.html?imdb_id=${getMovie[i].imdb_id}"><div class="result">${getMovie[i].title}</div></a>`;
   }
 
 }

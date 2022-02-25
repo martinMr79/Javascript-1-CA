@@ -4,8 +4,11 @@ h1 {
 }
 
 a {
-    font-size: 19px;        
+    font-size: 19px;    
+    color: black;    
 }
+
+
 
 main {
 
@@ -38,11 +41,12 @@ footer {
 }
 
 .result {
-    background-color: white; 
-    min-width: 200px;
+    background-color: skyblue; 
     padding: 10px;
     display: flex;
     flex-direction: column;
+    margin: 25px;
+    
 }
 
 
@@ -91,5 +95,7 @@ button {
     cursor: pointer;
     border-radius: 0.2rem;   
 }
+
+
 
 /*** Details page 
