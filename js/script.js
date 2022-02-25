@@ -22,7 +22,7 @@ async function getMovieData() {
     if (i === 20){
       break; 
     } 
-    resultsCard.innerHTML += `<div class="result"><a href="details.html">${getMovie[i].title}</a></div>`;
+    resultsCard.innerHTML += `<div class="result"><a href="details.html?id=${getMovie[i].imdb_id}">${getMovie[i].title}</a></div>`;
   }
 
   
