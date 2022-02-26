@@ -3,7 +3,7 @@ const apiUrl = "https://finalspaceapi.com/api/v0/character"
 
 
 let loader = document.querySelector(".loader");
-const resultsCard = document.querySelector("#resultsCard")
+const resultsCard = document.querySelector(".resultsCard")
 
 async function getMovieData() {
   try { 
@@ -22,7 +22,7 @@ async function getMovieData() {
       break; 
     } 
     resultsCard.innerHTML += `<a href="details.html?id=${getMovie[i].id}" class="card">
-    <div class="result">${getMovie[i].name}</div>
+    <h2>${getMovie[i].name}</h2>
     <div class="result image" style="background-image: url(${getMovie[i].img_url});"></div>
     <div class="result">
     <ul>

@@ -1,106 +1,117 @@
-h1 { 
-    text-align: center;
-    font-size: 3rem;
+h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+h2 {
+  text-align: center;
 }
 
 a {
-    font-size: 19px;    
-    color: black;    
+  font-size: 19px;
+  color: black;
 }
 
 .loader {
-    text-align: center;
-    font-size: 55px;
-    color: blue;
+  text-align: center;
+  font-size: 55px;
+  color: blue;
 }
 
 body {
-    margin: 0;
- 
-    
+  margin: 0;
 }
 
 footer {
-    background-color: beige;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    
+  background-color: beige;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
 }
 
 .movieInput {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .result {
-    background-color: skyblue; 
-    padding: 10px;
-}
-
-div {
-
+  background-color: skyblue;
+  padding: 10px;
 }
 
 .image {
-    height: 350px; 
-    background-size: cover ;
-    background-position: center top ;
+  height: 350px;
+  background-size: cover;
+  background-position: center top;
 }
 
-/*****Contact page*****/
-
-.container {
-    max-width: 940px;
-    margin: 0 auto;
-    padding-top: 60px;
-}
-
-.form-error {
-    display: none;
-    color: red;
-    font-size: 1.1rem;
-    margin-top: 3px;
-}
-
-label { 
-    display: block;
-    margin-top: 1rem;
-}
-
-input { 
-    width: 100%;
-    margin-top: 2px;
-    padding: 10px;
-    font-size: 19px;
-}
-
-form { 
-    padding: 2em;
-    background: white;
-    border-radius: 1rem;
-
-}
-
-button { 
-    background-color:blue;
-    border: none;
-    width: 200px;
-    padding: 1rem;  
-    color: antiquewhite;
-    margin: 35px 0px;
-    cursor: pointer;
-    border-radius: 0.2rem;   
+.details-image {
+  height: 800px;
+  background-size: cover;
+  background-position: center top;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    max-width: 300px;
-    margin: 1rem;
-    border-radius: 1rem;
-    text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  max-width: 300px;
+  margin: 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
 }
 
-/*** Details page 
+.details-card {
+  max-width: 1000px;
+  margin: 1rem;
+  border-radius: 1rem;
+  text-decoration: none;
+}
+/*****Contact page*****/
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.form-error {
+  display: none;
+  color: red;
+  font-size: 1.1rem;
+  margin-top: 3px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+input {
+  width: 100%;
+  margin-top: 2px;
+  padding: 10px;
+  font-size: 19px;
+}
+
+form {
+  padding: 2em;
+  background: white;
+  border-radius: 1rem;
+}
+
+button {
+  background-color: blue;
+  border: none;
+  width: 200px;
+  padding: 1rem;
+  color: antiquewhite;
+  margin: 35px 0px;
+  cursor: pointer;
+  border-radius: 0.2rem;
+}
+
+.resultsCard {
+  display: flex;
+  flex-wrap: wrap;
+}

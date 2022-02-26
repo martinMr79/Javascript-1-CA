@@ -31,13 +31,15 @@ function message(messageType = "success", message = "error") {
 }
 
 function createHTML(movieDetails) {
-  detailContainer.innerHTML = `<h1>${movieDetails.name}</h1>
-    <div class="result image" style="background-image: url(${movieDetails.img_url});"></div>
+  detailContainer.innerHTML = `<h1>${movieDetails.name}</h1><div class="details-card">
+    <div class="result details-image" style="background-image: url(${movieDetails.img_url});"></div>
     <div class="result">
+    <title>${movieDetails.name}</title>
     <ul>  
     <li>Gender: ${movieDetails.gender}</li>
     <li>Origin: ${movieDetails.origin}</li>
     <li>Species: ${movieDetails.species}</li>
-    <li>Abilities: ${movieDetails.abilities[0, 2]}</li>
-    </ul></div>`;
+    <li>Abilities: ${movieDetails.abilities[0]}</li>
+    <li>Status: ${movieDetails.status}</li>
+    </ul></div></div>`;
 }
