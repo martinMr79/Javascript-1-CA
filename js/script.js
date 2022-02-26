@@ -1,10 +1,6 @@
-const apiUrl = "https://data-imdb1.p.rapidapi.com/movie/byYear/1983/";
 
-const rapidApiKey = {
-  headers: {
-    "x-rapidapi-key": "e360b3c142msh1d6f915ac4d91e2p115aedjsn35105dc71911",
-  },
-};
+const apiUrl = "https://finalspaceapi.com/api/v0/character"
+
 
 let loader = document.querySelector(".loader");
 const resultsCard = document.querySelector("#resultsCard")
@@ -12,10 +8,11 @@ const resultsCard = document.querySelector("#resultsCard")
 async function getMovieData() {
   try { 
 
-  const response = await fetch(apiUrl, rapidApiKey);
+  const response = await fetch(apiUrl);
   const json = await response.json();
-  console.log(json.results);
-  const getMovie = json.results;
+  console.log(json);
+  const getMovie = json;
+  console.log(getMovie)
 
   loader.innerHTML = "";
   
@@ -24,7 +21,15 @@ async function getMovieData() {
     if (i === 20){
       break; 
     } 
-    resultsCard.innerHTML += `<a href="details.html?imdb_id=${getMovie[i].imdb_id}"><div class="result">${getMovie[i].title}</div></a>`;
+    resultsCard.innerHTML += `<a href="details.html?id=${getMovie[i].id}" class="card">
+    <div class="result">${getMovie[i].name}</div>
+    <div class="result image" style="background-image: url(${getMovie[i].img_url});"></div>
+    <div class="result">
+    <ul>
+    <li>Origin: ${getMovie[i].origin}</li>
+    <li>Species: ${getMovie[i].species}</li>
+    </ul></div>
+    </a>`;
   }
 
 }

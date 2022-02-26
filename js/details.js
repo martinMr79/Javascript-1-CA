@@ -1,50 +1,43 @@
+const detailContainer = document.querySelector(".character-details");
+const queryString = document.location.search;
+const params = new URLSearchParams(queryString);
 
-const detailContainer = document.querySelector(".movie-details")
-const queryString = document.location.search; 
-const params = new URLSearchParams(queryString); 
+const id = params.get("id");
 
-const id = params.get("imdb_id");
+console.log(id);
 
-console.log(id)
+const url = "https://finalspaceapi.com/api/v0/character/" + id;
 
-
-const urlId = "https://data-imdb1.p.rapidapi.com/movie/byYear/1983/" + id
-
-const rapidApiKey = {
-    headers: {
-      "x-rapidapi-key": "e360b3c142msh1d6f915ac4d91e2p115aedjsn35105dc71911",
-    },
-  };
-
-
+console.log(url);
 
 async function getMovieData() {
-
-    try {
-
-    const response = await fetch(urlId, rapidApiKey);
+  try {
+    const response = await fetch(url);
     const json = await response.json();
-    console.log(json.results);
-    const getMovieDetails = json.results;
-        
-    createHTML(getMovieDetails)    
+    console.log(json);
+    const getMovieDetails = json;
+
+    createHTML(getMovieDetails);
+  } catch (error) {
+    console.log(error);
+    detailContainer.innerHTML = message("error", error);
+  }
 }
 
-catch(error) { 
-    console.log(error); 
-    detailContainer.innerHTML = message("error", error); 
-}
-
-
-}
-
-getMovieData()
+getMovieData();
 
 function message(messageType = "success", message = "error") {
-    return `<div class ="alert ${messageType}">${message}</div>`; 
+  return `<div class ="alert ${messageType}">${message}</div>`;
 }
 
-
 function createHTML(movieDetails) {
-    detailContainer.innerHTML = `<h1>${movieDetails.imdb_id}</h1>`
-}  
+  detailContainer.innerHTML = `<h1>${movieDetails.name}</h1>
+    <div class="result image" style="background-image: url(${movieDetails.img_url});"></div>
+    <div class="result">
+    <ul>  
+    <li>Gender: ${movieDetails.gender}</li>
+    <li>Origin: ${movieDetails.origin}</li>
+    <li>Species: ${movieDetails.species}</li>
+    <li>Abilities: ${movieDetails.abilities[0, 2]}</li>
+    </ul></div>`;
+}
