@@ -18,9 +18,7 @@ async function getMovieData() {
   
 
   for (let i = 0; i < getMovie.length; i++) {
-    if (i === 20){
-      break; 
-    } 
+
     resultsCard.innerHTML += `<a href="details.html?id=${getMovie[i].id}" class="card">
     <h2>${getMovie[i].name}</h2>
     <div class="result image" style="background-image: url(${getMovie[i].img_url});"></div>
