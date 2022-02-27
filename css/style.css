@@ -32,12 +32,9 @@ footer {
 }
 
 footer a {
-    font-size: 25px;
-    text-decoration: none;
-    }
-
-.movieInput {
-  margin-bottom: 10px;
+  font-size: 35px;
+  text-decoration: none;
+  color: brown;
 }
 
 .result {
@@ -58,7 +55,6 @@ footer a {
 }
 
 .card {
-
   flex-basis: 100%;
   max-width: 300px;
   margin: 1rem;
@@ -115,9 +111,21 @@ button {
   border-radius: 0.2rem;
 }
 
+button:disabled {
+  background-color: rgb(171, 198, 209);
+}
+
 .resultsCard {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
   justify-content: center;
+}
+
+.message {
+  background: rgb(33, 33, 192);
+  padding: 1rem;
+  color: antiquewhite;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }

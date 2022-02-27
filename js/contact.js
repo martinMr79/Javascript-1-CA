@@ -8,6 +8,8 @@ const emailError = document.querySelector("#emailError");
 const adress = document.querySelector("#adress");
 const adressError = document.querySelector("#adressError");
 const validForm = document.querySelector(".validForm");
+const message = document.querySelector(".message");
+const button = document.querySelector("button");
 
 function validateForm(event) {
   event.preventDefault();
@@ -37,10 +39,46 @@ function validateForm(event) {
   }
 }
 
+function checkIfButtonIsDisabled() {
+  if (
+    checkLength(nameInput.value, 1) &&
+    checkLength(subject.value, 9) &&
+    //adress.value is set to 4 on purpose so it is possible to trigger the error message
+    checkLength(adress.value, 4) &&
+    validateEmail(email.value)
+  ) {
+    button.disabled = false;
+  } else {
+    message.innerHTML = "";
+    button.disabled = true;
+  }
+}
+
+nameInput.addEventListener("keyup", checkIfButtonIsDisabled);
+subject.addEventListener("keyup", checkIfButtonIsDisabled);
+
+adress.addEventListener("keyup", checkIfButtonIsDisabled);
+
 function validateEmail(email) {
   const regEx = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})*$/;
   const matchPattern = regEx.test(email);
   return matchPattern;
 }
 
-form.addEventListener("submit", validateForm);
+function submitForm(event) {
+  event.preventDefault();
+
+  message.innerHTML = '<div class="message">form passed successfully</div>';
+
+  form.reset();
+}
+
+form.addEventListener("submit", submitForm);
+
+function checkLength(value, len) {
+  if (value.trim().length >= len) {
+    return true;
+  } else {
+    return false;
+  }
+}
