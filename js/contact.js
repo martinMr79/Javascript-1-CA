@@ -43,7 +43,6 @@ function checkIfButtonIsDisabled() {
   if (
     checkLength(nameInput.value, 1) &&
     checkLength(subject.value, 9) &&
-    //adress.value is set to 4 on purpose so it is possible to trigger the error message
     checkLength(adress.value, 4) &&
     validateEmail(email.value)
   ) {
@@ -73,7 +72,8 @@ function submitForm(event) {
   form.reset();
 }
 
-form.addEventListener("submit", submitForm);
+form.addEventListener("submit", validateForm);
+form.addEventListener("submit", submitForm)
 
 function checkLength(value, len) {
   if (value.trim().length >= len) {

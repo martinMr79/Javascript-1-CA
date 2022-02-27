@@ -1,7 +1,7 @@
 const detailContainer = document.querySelector(".character-details");
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
-
+let loader = document.querySelector(".loader");
 const id = params.get("id");
 
 console.log(id);
@@ -16,7 +16,7 @@ async function getMovieData() {
     const json = await response.json();
     console.log(json);
     const getMovieDetails = json;
-
+    loader.innerHTML = "";
     createHTML(getMovieDetails);
   } catch (error) {
     console.log(error);

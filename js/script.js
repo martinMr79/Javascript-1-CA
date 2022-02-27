@@ -6,9 +6,7 @@ const resultsCard = document.querySelector(".resultsCard");
 async function getMovieData() {
   try {
     const response = await fetch(apiUrl);
-    const json = await response.json();
-    console.log(json);
-    const getMovie = json;
+    const getMovie = await response.json();
     console.log(getMovie);
 
     loader.innerHTML = "";
